@@ -6,3 +6,5 @@ impares::[Int]->[Int]
 impares []=[]
 impares (x:xs)=if odd x then [x]++impares xs
                 else impares(xs)
+
+                
