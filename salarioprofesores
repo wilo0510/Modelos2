@@ -1,0 +1,15 @@
+categoria('titular','horascatedra',100000).
+categoria('asistente','horascatedra',70000).
+categoria('auxiliar','horascatedra',40000).
+categorizacion(A,B):-docente(A,B,_).
+informacion(A):-
+docente('Alejandro','titular','tco').
+docente('xyz','asistente','horascatedra').
+horassemama('Alejandro',40).
+horassemana('xyz',16).
+duracionsemestre(18).
+porcentajecontrato('hc',0).
+porcentajecontrato('horarios',0).
+porcentajecontrato('tco',20).
+porcentajecontrato('mto',30).
+
