@@ -1,15 +1,19 @@
 categoria('titular','horascatedra',100000).
+categoria('titular','tco',120000).
 categoria('asistente','horascatedra',70000).
 categoria('auxiliar','horascatedra',40000).
-categorizacion(A,B):-docente(A,B,_).
-informacion(A):-
 docente('Alejandro','titular','tco').
-docente('xyz','asistente','horascatedra').
-horassemama('Alejandro',40).
-horassemana('xyz',16).
+docente('Xavier','asistente','horascatedra').
+horassemana('Alejandro',40).
+horassemana('Xavier',16).
 duracionsemestre(18).
 porcentajecontrato('hc',0).
 porcentajecontrato('horarios',0).
 porcentajecontrato('tco',20).
 porcentajecontrato('mto',30).
+valorhora(A,B):-docente(A,C,T),categoria(C,T,B).
+valorsemana(A,B):-valorhora(A,C),horassemana(A,X),B is C*X.
+valorsemestre(A,B):-valorsemana(A,C),duracionsemestre(X),B is C*X.
+salario(A,B):-valorsemestre(A,C),docente(A,_,T),porcentajecontrato(T,P),B is C+(C*(P/100)).
+
 
