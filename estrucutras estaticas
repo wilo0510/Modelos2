@@ -43,3 +43,16 @@ int ArbolBinario::agregar(int raiz,int elemento)
 	}
 	return raiz;
 }
+void ArbolBinario::mostrarPreorden(int raiz){
+	
+}
+void ArbolBinario::mostrarPostorden(int raiz){
+	
+}
+void ArbolBinario::mostrarInorden(int raiz){
+	
+}
+int ArbolBinario::buscar(int elemento){
+	
+}
+
