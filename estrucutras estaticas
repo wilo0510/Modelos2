@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+struct Nodo{
+	int elemento;
+	int izq;
+	int der;
+};
+class ArbolBinario{
+	int numNodos;
+	Nodo arbol[];
+	public:
+		ArbolBinario(int);
+		int agregar(int,int);
+		void mostrarInorden(int);
+		
+};
+ArbolBinario::ArbolBinario(int numNodos){
+	this->numNodos=numNodos;
+	arbol=new Nodos[numNodos];
+	arbol[0].der=-1;
+	for(int k=0;k<numNodos;k++)
+	{
+		arbol[k].izq=k+1;
+	}
+	arbol[numNodos-1].izq=-1;
+}
+int ArbolBinario::agregar(int raiz,int elemento)
+{
+	if(raiz!=-1)
+	{
+		if(arbol[raiz].elemento>elemento)
+		arbol[raiz].izq=agregar(arbol[raiz].izq,elemento);
+		else
+		arbol[raiz].der=agregar(arbol[raiz].der,elemento);
+		
+	}
+	else{
+		raiz=arbol[0].izq;
+		arbol[0].izq=arbol[raiz].izq;
+		arbol[raiz].elemento=elemento;
+		arbol[raiz].izq=-1;
+		arbol[raiz].der=-1;
+	}
+	return raiz;
+}
